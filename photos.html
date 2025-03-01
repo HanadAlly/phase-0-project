@@ -4,20 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./script.js" defer></script>
     <style>
        header{
     color: #fff;
     padding: 5px;
     color: black;
-}
-nav ul{
-      display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style-type: none;
-    gap: 2 rem;
-    color: black;
-
 }
 
 body{
@@ -52,6 +44,55 @@ nav ul li a{
 nav ul li a:hover{
     border-radius: 5px;
 } 
+ img {
+    object-fit: cover;
+    display: block;
+    margin: 6px; 
+    padding: 6px;
+}
+
+.image-section {
+    text-align: center; 
+    margin: 20px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    object-fit: cover; 
+    display: block;
+}
+
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+    color: white;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(190, 169, 169, 0.5);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
 footer{
     background-color: #5d795b;
     color: #fff;
@@ -74,6 +115,20 @@ footer{
             </ul>
         </nav>
     </header>
+     <div class="slider-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slider">
+                <div class="slide">
+                    <img src="./images/u15.jpg" alt="Image 1" width="1500px" height="600px">
+                    <div class="caption">The under 15 Team</div>
+                </div>
+                <div class="slide">
+                    <img src="./images/u25.jpg" alt="Image 3" width="1500px" height="600px">
+                    <div class="caption">The under 22 Team</div>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
     <footer>
          <p>2025 SouthCourt FC. All rights reserved.</p>
     </footer>
